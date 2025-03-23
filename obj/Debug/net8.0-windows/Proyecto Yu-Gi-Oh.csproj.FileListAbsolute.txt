@@ -1,0 +1,6 @@
+C:\Users\GUEST\source\repos\Proyecto Yu-Gi-Oh\obj\Debug\net8.0-windows\Proyecto_Yu_Gi_Oh.Form1.resources
+C:\Users\GUEST\source\repos\Proyecto Yu-Gi-Oh\obj\Debug\net8.0-windows\Proyecto Yu-Gi-Oh.csproj.GenerateResource.cache
+C:\Users\GUEST\source\repos\Proyecto Yu-Gi-Oh\obj\Debug\net8.0-windows\Proyecto Yu-Gi-Oh.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GUEST\source\repos\Proyecto Yu-Gi-Oh\obj\Debug\net8.0-windows\Proyecto Yu-Gi-Oh.AssemblyInfoInputs.cache
+C:\Users\GUEST\source\repos\Proyecto Yu-Gi-Oh\obj\Debug\net8.0-windows\Proyecto Yu-Gi-Oh.AssemblyInfo.cs
+C:\Users\GUEST\source\repos\Proyecto Yu-Gi-Oh\obj\Debug\net8.0-windows\Proyecto Yu-Gi-Oh.csproj.CoreCompileInputs.cache
