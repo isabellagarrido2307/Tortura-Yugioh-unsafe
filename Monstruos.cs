@@ -8,14 +8,14 @@ namespace Proyecto_Yu_Gi_Oh
 {
     public class Monstruos
     {
-        public string nombre { get; set; }
-        public string direccion {  get; set; }
-        public int ataque {  get; set; }
-        public int defensa { get; set; }
-        public bool modo { get; set; }
-        public int salud {  get; set; }
-        public int turnosDeEstado { get; set; }
-        public int vidas {  get; set; }
+        private string nombre { get; set; }
+        private string direccion {  get; set; }
+        private int ataque {  get; set; }
+        private int defensa { get; set; }
+        private bool modo { get; set; }
+        private int salud {  get; set; }
+        private int turnosDeEstado { get; set; }
+        private int vidas {  get; set; }
         public void efecto() { }
         public Monstruos(string _nombre, string _direc, int _atq, int _def, bool _modo, int _vidas)
         {

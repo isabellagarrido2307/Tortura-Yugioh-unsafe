@@ -1,15 +1,20 @@
 namespace Proyecto_Yu_Gi_Oh
 {
-    public partial class Form1 : Form
+    public unsafe partial class Form1 : Form
     {
         public Form1()
         {
+            //MessageBox.Show("HOLAAAAAAAAAA");
             InitializeComponent();
+            ListaMonstruos lista = new ListaMonstruos();
+            Monstruos m = new Monstruos("jose", "u", 80, 80, true, 1);
+            lista.Insertar(m);
+            MessageBox.Show(lista.cabeza->monstruo.get);
+            pictureBox1.Image = Properties.Resources.AlaEscudo;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
         public void InicializarCartas()
         {

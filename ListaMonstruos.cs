@@ -14,9 +14,10 @@ namespace Proyecto_Yu_Gi_Oh
             cabeza = null;
         }
 
-        public unsafe void Insertar(Monstruos* _monstruo)
+        public unsafe void Insertar(Monstruos _monstruo)
         {
-            Nodo* nuevo = new Nodo(_monstruo);
+            Nodo pepe = new Nodo(_monstruo);
+            Nodo* nuevo = &pepe;
             if (cabeza == null)
             {
                 cabeza = nuevo;
@@ -31,7 +32,7 @@ namespace Proyecto_Yu_Gi_Oh
                 aux->siguiente = nuevo;
             }
         }
-        public void Eliminar(Monstruos* _monstruo)
+        public void Eliminar(Monstruos _monstruo)
         {
             Nodo* aux = cabeza;
             Nodo* aux2 = cabeza;

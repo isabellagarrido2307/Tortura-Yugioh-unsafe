@@ -27,18 +27,18 @@ namespace Proyecto_Yu_Gi_Oh
         {
             
         }
-        public void EfectoDespliegue(ListaMonstruos* Lista)
+        public void EfectoDespliegue(ListaMonstruos Lista)
         {
-            ListaMonstruos* aux = Lista;
-            while (aux->cabeza != null)
+            ListaMonstruos aux = Lista;
+            while (aux.cabeza != null)
             {
-                if (Lista->cabeza->monstruo->nombre == "Aymara Reina Peluche")
+                if (Lista.cabeza->monstruo.nombre == "Aymara Reina Peluche")
                 {
                     this.ataque = 2000;
                     this.defensa = 2200;
                     return;
                 }
-                aux->cabeza = aux->cabeza->siguiente;
+                aux.cabeza = aux.cabeza->siguiente;
             }
         }
     }
@@ -89,18 +89,21 @@ namespace Proyecto_Yu_Gi_Oh
         public ChacinDomino(string _nombre, string _direc, int _atq, int _def, bool _modo, int _vidas) : base(_nombre, _direc, _atq, _def, _modo, _vidas)
         {
         }
+
+        //AGREGA AUXILIAR
         public ListaMonstruos EfectoAtaque(ListaMonstruos lista, int ataqueDestruido)
         {
             while (lista.cabeza != null)
             {
-                if (lista.cabeza->Monstruo->ataque < ataqueDestruido)
+                if (lista.cabeza->monstruo.ataque < ataqueDestruido)
                 {
                     
                     return lista;
                 }
-                lista.cabeza->Monstruo->ataque -= 100;
+                lista.cabeza->monstruo.ataque -= 100;
                 lista.cabeza = lista.cabeza->siguiente;
             }
+            return lista;
         }
     }
 
