@@ -27,18 +27,18 @@ namespace Proyecto_Yu_Gi_Oh
         {
             
         }
-        public void EfectoDespliegue(ListaMonstruos Lista)
+        public unsafe void EfectoDespliegue(ListaMonstruos* CampoAliado, ListaMonstruos* CampoEnemigo)
         {
-            ListaMonstruos aux = Lista;
-            while (aux.cabeza != null)
+            ListaMonstruos* aux = CampoAliado;
+            while (aux->cabeza != null)
             {
-                if (Lista.cabeza->monstruo.nombre == "Aymara Reina Peluche")
+                if (aux->cabeza->getMonstruo().getNombre() == "Aymara Reina Peluche")
                 {
-                    this.ataque = 2000;
-                    this.defensa = 2200;
+                    this.setAtaque(2000);
+                    this.setDefensa(2200);
                     return;
                 }
-                aux.cabeza = aux.cabeza->siguiente;
+                aux->cabeza = aux->cabeza->getSiguiente();
             }
         }
     }
@@ -59,9 +59,9 @@ namespace Proyecto_Yu_Gi_Oh
         public AngelIntegral(string _nombre, string _direc, int _atq, int _def, bool _modo, int _vidas) : base(_nombre, _direc, _atq, _def, _modo, _vidas)
         {
         }
-        public void EfectoAtaque()
+        public unsafe void EfectoAtaque(ListaMonstruos* CampoAliado, ListaMonstruos* CampoEnemigo)
         {
-            this.ataque += 100;
+            this.setAtaque(getAtaque()+100);
         }
     }
     public class AymaraPeluche : Monstruos
@@ -88,22 +88,21 @@ namespace Proyecto_Yu_Gi_Oh
     {
         public ChacinDomino(string _nombre, string _direc, int _atq, int _def, bool _modo, int _vidas) : base(_nombre, _direc, _atq, _def, _modo, _vidas)
         {
+            
         }
 
         //AGREGA AUXILIAR
-        public ListaMonstruos EfectoAtaque(ListaMonstruos lista, int ataqueDestruido)
+        public unsafe void EfectoAtaque(ListaMonstruos* CampoAliado, ListaMonstruos* CampoEnemigo, ListaMonstruos* CementerioAliado, ListaMonstruos* CementerioEnemigo)
         {
-            while (lista.cabeza != null)
+            ListaMonstruos* aux = CampoEnemigo;
+            while (aux->cabeza!= null)
             {
-                if (lista.cabeza->monstruo.ataque < ataqueDestruido)
+                if (aux->cabeza->getMonstruo().getAtaque() < this.getAtaque())
                 {
-                    
-                    return lista;
+                    CementerioEnemigo->Insertar(aux->cabeza->getMonstruo());
+                    CampoEnemigo->Eliminar(aux->cabeza->getMonstruo());
                 }
-                lista.cabeza->monstruo.ataque -= 100;
-                lista.cabeza = lista.cabeza->siguiente;
             }
-            return lista;
         }
     }
 

@@ -25,31 +25,31 @@ namespace Proyecto_Yu_Gi_Oh
             else
             {
                 Nodo* aux = cabeza;
-                while (aux->siguiente != null)
+                while (aux->getSiguiente() != null)
                 {
-                    aux = aux->siguiente;
+                    aux->setSiguiente(aux->getSiguiente());
                 }
-                aux->siguiente = nuevo;
+                aux->setSiguiente(nuevo);
             }
         }
         public void Eliminar(Monstruos _monstruo)
         {
             Nodo* aux = cabeza;
             Nodo* aux2 = cabeza;
-            if (cabeza->monstruo == _monstruo)
+            if (cabeza->getMonstruo() == _monstruo)
             {
-                cabeza = cabeza->siguiente;
+                cabeza = cabeza->getSiguiente();
                 return;
             }
             while (aux != null)
             {
-                if (aux->monstruo == _monstruo)
+                if (aux->getMonstruo() == _monstruo)
                 {
-                    aux2->siguiente = aux->siguiente;
+                    aux2->setSiguiente(aux->getSiguiente());
                     return;
                 }
                 aux2 = aux;
-                aux = aux->siguiente;
+                aux = aux->getSiguiente();
             }
         }
     }

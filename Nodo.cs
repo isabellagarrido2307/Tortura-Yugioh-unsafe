@@ -19,10 +19,19 @@ namespace Proyecto_Yu_Gi_Oh
         {
             return siguiente;
         }
-        public void setSiguiente(Monstruos _monstruos)
+        public unsafe void setSiguiente(Nodo* _siguiente)
         {
-            monstruo = _monstruos;
+            siguiente = _siguiente;
         }
-        
+        public Monstruos getMonstruo()
+        {
+            return monstruo;
+        }
+        public void setMonstruo(Monstruos _monstruo)
+        {
+            monstruo = _monstruo;
+        }
+
+
     }
 }
