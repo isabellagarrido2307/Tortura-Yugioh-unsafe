@@ -8,13 +8,30 @@ namespace Proyecto_Yu_Gi_Oh
 {
     public unsafe class Nodo
     {
-        public Monstruos* siguiente {  get; set; }
-        public Monstruos* Monstruo { get; set; }
-        public Nodo(Monstruos* _monstruo)
+        private Nodo* siguiente {  get; set; }
+        private Monstruos monstruo { get; set; }
+        public Nodo(Monstruos _monstruo)
         {
-            Monstruo = _monstruo;
+            monstruo = _monstruo;
             siguiente = null;
         }
-        
+        public Nodo* getSiguiente()
+        {
+            return siguiente;
+        }
+        public unsafe void setSiguiente(Nodo* _siguiente)
+        {
+            siguiente = _siguiente;
+        }
+        public Monstruos getMonstruo()
+        {
+            return monstruo;
+        }
+        public void setMonstruo(Monstruos _monstruo)
+        {
+            monstruo = _monstruo;
+        }
+
+
     }
 }
